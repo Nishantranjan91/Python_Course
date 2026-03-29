@@ -13,4 +13,4 @@ for i in a:
         d[i] += 1
     else:
         d[i] = 1
-print(d)        
+print(d.keys())        
