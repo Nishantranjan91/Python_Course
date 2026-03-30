@@ -5,3 +5,4 @@ while a > 0:
     count = count+1
     a = a // 10
     print(count)
+    # total counting of digits in a number
