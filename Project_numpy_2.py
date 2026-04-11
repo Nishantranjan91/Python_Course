@@ -12,4 +12,21 @@ def print_board(b):
         if r < 2:
             print("---+---+---")
             print()
+
+
+
+def check_winner(b):
+    if 3 in np.sum(b,axis= 1) or 3 in np.sum(b,axis= 0):
+        return 'x'
+    if -3 in np.sum(b,axis=1) or -3 in np.sum(b,axis= 0):
+        return '0'
+
+
+    if np.trace(b) == 3 or np.trace(np.fliplr(b)) == 3:
+        return 'x'  
+    if np.trace(b) == -3 or np.trace(np.fliplr(b)) == 3:
+        return '0'        
+    if not 0 in b:
+        return 'DRAW'
+    return None  
 print_board(board)            
