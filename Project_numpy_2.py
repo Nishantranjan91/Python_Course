@@ -29,4 +29,38 @@ def check_winner(b):
     if not 0 in b:
         return 'DRAW'
     return None  
-print_board(board)            
+
+
+current = 1
+
+
+print("welcome to tic toc tow")
+print_board(board)      
+
+
+while True:
+    if current == 1:
+        player = 'x'
+    else:
+        player = 'o'
+    try:
+        row = int(input(player + "- Enter row (0,1,2)"))        
+        col = int(input(player + "- Enter column (0,1,2)"))  
+    except ValueError:
+        print("please enter numbers only\n")
+        continue
+    if row < 0 or row > 2 or col < 0 or col > 2:
+        print("row and column must be between 0 and 2")    
+    if board[row, col]!= 0:
+        print("cell is already taken")    
+    board[row, col] = current
+    print_board(board)
+
+    result = check_winner(board)
+    if result is not None:
+        if result == "DRAW":
+            print("ohoo it is a draw")
+        else:
+            print(result,"wins")
+        break        
+
