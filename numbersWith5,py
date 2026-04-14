@@ -1,0 +1,5 @@
+# Find numbers between 1 and 100 ending with 5
+
+for num in range(1, 101):
+    if num % 10 == 5:
+        print(num)
