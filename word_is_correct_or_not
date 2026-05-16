@@ -1,0 +1,11 @@
+# List of correct words
+dictionary = ["apple", "banana", "orange", "mango", "grapes"]
+
+# Take input from user
+word = input("Enter a word: ")
+
+# Check if the word exists in dictionary
+if word.lower() in dictionary:
+    print("The word is correct.")
+else:
+    print("The word is incorrect.")
